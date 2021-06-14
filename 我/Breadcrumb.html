@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        h3 {
+            margin: 1rem 0;
+        }
+
+        body {
+            background: #eee;
+        }
+
+        .container {
+            margin-bottom: 2rem;
+        }
+
+        /* 第一種方式 直接網頁右鍵檢查找到 / 在的地方 把 bootstrap.css 裡的 CSS 拉出來改 */
+        .breadcrumb-item+.breadcrumb-item::before {
+            float: left;
+            padding-right: 0.5rem;
+            color: #6c757d;
+            content: ">";
+        }
+
+        /* 第二種方式 用 unicode */
+        /* https://unicode-table.com/en/blocks/ */
+        .breadcrumb-item+.breadcrumb-item::before {
+            float: left;
+            padding-right: 0.5rem;
+            color: #6c757d;
+            content: "\2192";
+        }
+
+        /* 第三種方式 用 base64 圖片編碼字串*/
+        /* https://www.flaticon.com/
+        https://www.base64-image.de/ */
+        /* 優點:base 64 是字串，下載不用發送圖片的請求，減少下載的時間，使用者可以更快的看到結果
+        缺點:編碼字串容量比平常圖片還大，圖片越複雜檔案越大編碼越長。
+        建議使用在 icon*/
+        .breadcrumb-item+.breadcrumb-item::before {
+            float: left;
+            padding-right: 0.5rem;
+            color: #6c757d;
+            content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACxSURBVDiNxdMtboJBEMbx31sqSDCQVGKwKDyKA3AajoDkBsgegFRVYjAQJBiCIRgcCQa7mC15GbsknWTU/9kns/NRpZSUxEfR6xxLnHIeMU4pyZVta+yA0R+raUyQannHMMNpYDcMXgyycBaEV/Qzmwd2QS8aVPgOwjO6aOAnsAO+ngbZ5BO/QbhHB02sAtugFRvSwjoIl5m1sQtsUT7Gt3yhuIlKxqh0kRSucvXv1/gA0nbfJYyX8VkAAAAASUVORK5CYII=);
+            line-height: 1.7;
+            transform: scale(0.5);
+            filter: hue-rotate(120deg);
+            position: absolute;
+            top: 10px;
+            left: -5px;
+        }
+
+        li.breadcrumb-item {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <div class="container">
+        <h2>麵包屑 (Breadcrumb)</h2>
+        <h3>在導航結構中透過 CSS 自動添加分隔符號指示當前頁面的位置。</h3>
+
+        <hr>
+
+        <h4>麵包屑可以修改 before 的 content</h4>
+        <ol>
+            <li>直接網頁右鍵檢查找到 / 在的地方 把 bootstrap.css 裡的 CSS 拉出來改</li>
+            <li>用 unicode </li>
+            <li></li>
+        </ol>
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Library</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Data</li>
+                        <!-- unicode -->
+                        <span>
+                            &#8594;</span>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

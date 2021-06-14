@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        h3 {
+            margin: 1rem 0;
+        }
+
+        body {
+            background: #eee;
+        }
+
+        .container {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- BS4 -->
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <!-- BS5 -->
+    <!-- <script src="../js/bootstrap5.bundle.min.js"></script> -->
+
+    <div class="container">
+        <h2>警報</h2>
+        <h3>使用靈活的警報消息為使用者操作提供上下文的內容回饋。</h3>
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-primary" role="alert">
+                    A simple primary alert—check it out!
+                </div>
+                <div class="alert alert-secondary" role="alert">
+                    A simple secondary alert—check it out!
+                </div>
+                <div class="alert alert-success" role="alert">
+                    A simple success alert—check it out!
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    A simple danger alert—check it out!
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    A simple warning alert—check it out!
+                </div>
+                <div class="alert alert-info" role="alert">
+                    A simple info alert—check it out!
+                </div>
+                <div class="alert alert-light" role="alert">
+                    A simple light alert—check it out!
+                </div>
+                <div class="alert alert-dark" role="alert">
+                    A simple dark alert—check it out!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>連結顏色</h2>
+        <h3>使用 .alert-link 來快速為警報中的連結增添合適的色彩。</h3>
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-primary" role="alert">
+                    A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if
+                    you like.
+                </div>
+                <div class="alert alert-secondary" role="alert">
+                    A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if
+                    you like.
+                </div>
+                <div class="alert alert-success" role="alert">
+                    A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if
+                    you like.
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if
+                    you like.
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    A simple warning alert with <a href="#" class="alert-link">an example link</a>. Give it a click if
+                    you like.
+                </div>
+                <div class="alert alert-info" role="alert">
+                    A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you
+                    like.
+                </div>
+                <div class="alert alert-light" role="alert">
+                    A simple light alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you
+                    like.
+                </div>
+                <div class="alert alert-dark" role="alert">
+                    A simple dark alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you
+                    like.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>額外的內容</h3>
+        <h4>警報可以增加額外的 HTML 元素，像是標題、段落以及分隔線。</h4>
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Well done!</h4>
+                    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a
+                        bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                    <hr>
+                    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>在關閉的按鈕上加上自定義屬性 data-dismiss="alert" 可以觸發 JS 的關閉功能，data-* 再套件或框架通常有不用寫JS就可以使用互動功能</h4>
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>使用 JS 關閉</h4>
+        <div class="row">
+            <div class="col">
+                <div id="alert1" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                    <button id="btn1" type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // BS4 ---------------------------------------------
+        // $('#btn1').on('click', function () {
+        //     $('#alert1').alert('close')
+        // })
+
+        // $('#alert1').on('close.bs.alert', function () {
+        //     alert('當關閉時要做的事情')
+        //     $('body').css({ backgroundColor: '#333' })
+        // })
+
+        // $('#alert1').on('closed.bs.alert', function () {
+        //     alert('當關閉後要做的事情')
+        //     $('body').css({ backgroundColor: '#fff' })
+        // })
+
+        // BS5---------------------------------------------
+        // 1. 選擇 DOM
+        // const btn1 = document.querySelector('#btn1')
+        // const alert1 = document.querySelector('#alert1')
+        // 2. 替 DOM 轉換為 Bootstrap 的元件實體
+        // const myAlert = new bootstrap.Alert(alert1)
+        // 3. 操控創建的實體的方法
+        // btn1.addEventListener('click', function () {
+        //     alert1.addEventListener('close.bs.alert', function () {
+        //         alert('當關閉時要做的事')
+        //         document.querySelector('body').style.backgroundColor = '#333'
+        //     })
+
+        //     alert1.addEventListener('closed.bs.alert', function () {
+        //         alert('當關閉後要做的事')
+        //         document.querySelector('body').style.backgroundColor = '#FFF'
+        //     })
+        //     myAlert.close()
+        // })
+
+        // $(document) 抓整份 html 
+        $(document).on('scroll', function () {
+            // 固定值 一開始的視窗高度
+            let winHeight = $(window).height()
+            // 變動值 卷軸移動的距離
+            let winScrollTop = $(window).scrollTop()
+            // 若一開始固定的視窗高度+捲動的距離 > p1 在整個 html 的高度 .top(由上往下算) .left(由左向右算)
+            if ((winHeight + winScrollTop) > $('#p1').offset().top) {
+                $('#myAlert').addClass('show')
+            } else {
+                $('#myAlert').removeClass('show')
+            }
+        })
+    </script>
+
+    <div class="container">
+        <p id="p1">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora, debitis culpa facilis aliquam delectus
+            animi rerum vel distinctio aut numquam ad sunt rem, laboriosam corporis? Expedita molestiae ad officia ut.
+        </p>
+        <div id="myAlert" class="alert alert-warning alert-dismissible fade position-fixed"
+            style="right:0;bottom:0;width:300px" role="alert">
+            <h4 class="alert-heading">今日促銷</h4>
+            <p>你的確實不需要不行，無疑能學到，支撐之。</p>
+            <hr>
+            <button class="btn btn-success">立即下單</button>
+            <button id="btn1" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem temporibus architecto labore adipisci
+            minima rerum consequuntur aspernatur eaque fuga est sint blanditiis, laboriosam ratione magnam impedit
+            accusamus rem soluta veritatis!</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        h3 {
+            margin: 1rem 0;
+        }
+
+        body {
+            background: #eee;
+        }
+
+        .container {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <div class="container">
+        <h3>按鈕群組 (Button group)</h3>
+        <h4>使用按鈕群組將一系列按鈕組合在一起，並且透過 JavaScript 增加它們。</h4>
+        <div class="row">
+            <div class="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">Left</button>
+                    <button type="button" class="btn btn-secondary">Middle</button>
+                    <button type="button" class="btn btn-secondary">Right</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>按鈕工具列</h3>
+        <h4>將整組的按鈕組加入到按鈕工具列中，用於更複雜的組件。可以用一個 .btn-toolbar 區塊將他們包起來，依據需要的工具類別將群組、按鈕等間隔開來。</h4>
+        <div class="row">
+            <div class="col">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <button type="button" class="btn btn-secondary">1</button>
+                        <button type="button" class="btn btn-secondary">2</button>
+                        <button type="button" class="btn btn-secondary">3</button>
+                        <button type="button" class="btn btn-secondary">4</button>
+                    </div>
+                    <div class="btn-group mr-2" role="group" aria-label="Second group">
+                        <button type="button" class="btn btn-secondary">5</button>
+                        <button type="button" class="btn btn-secondary">6</button>
+                        <button type="button" class="btn btn-secondary">7</button>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Third group">
+                        <button type="button" class="btn btn-secondary">8</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>垂直變化</h3>
+        <h4>將一組按鈕垂直堆疊而不是水平呈現。 此處不支援分割下拉式功能表。</h4>
+        <div class="row">
+            <div class="col">
+                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                    <button type="button" class="btn btn-secondary">Button</button>
+                    <button type="button" class="btn btn-secondary">Button</button>
+                    <button type="button" class="btn btn-secondary">Button</button>
+                    <button type="button" class="btn btn-secondary">Button</button>
+                    <button type="button" class="btn btn-secondary">Button</button>
+                    <button type="button" class="btn btn-secondary">Button</button>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                    <button type="button" class="btn btn-secondary">Button</button>
+                    <button type="button" class="btn btn-secondary">Button</button>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupVerticalDrop1" type="button" class="btn btn-secondary dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                            <a class="dropdown-item" href="#">Dropdown link</a>
+                            <a class="dropdown-item" href="#">Dropdown link</a>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary">Button</button>
+                    <button type="button" class="btn btn-secondary">Button</button>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupVerticalDrop2" type="button" class="btn btn-secondary dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop2">
+                            <a class="dropdown-item" href="#">Dropdown link</a>
+                            <a class="dropdown-item" href="#">Dropdown link</a>
+                        </div>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupVerticalDrop3" type="button" class="btn btn-secondary dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop3">
+                            <a class="dropdown-item" href="#">Dropdown link</a>
+                            <a class="dropdown-item" href="#">Dropdown link</a>
+                        </div>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupVerticalDrop4" type="button" class="btn btn-secondary dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop4">
+                            <a class="dropdown-item" href="#">Dropdown link</a>
+                            <a class="dropdown-item" href="#">Dropdown link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.btn-group > button, .btn-group-vertical > button').each(function () {
+            $(this).on('click', function () {
+                // .siblings() 除了自己以外同一層的其他元素
+                $(this).siblings().removeClass('active')
+                $(this).addClass('active')
+            })
+        })
+    </script>
+</body>
+
+</html>

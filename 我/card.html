@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        h4 {
+            margin: 1rem 0;
+        }
+
+        body {
+            background: #eee;
+        }
+
+        .container {
+            margin-bottom: 2rem;
+        }
+
+        .content {
+            /* 欄位個數 */
+            column-count: 2;
+
+            /* 欄跟欄空隙的寬度 */
+            column-gap: 30px;
+
+            /* 欄位間的直線 */
+            column-rule: 4px dotted #aaa;
+        }
+
+        .contnet div {
+            padding: 1rem;
+        }
+
+        .content div::first-letter {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <div class="container">
+        <h2>卡片(card)</h2>
+        <p>卡片是很好使用的資訊容器，可以放置圖片 文字 按鈕或其他文字，主要資訊放在 .card-body 裡面。(.card-title .card-subtitle .card-text .card-link)
+            ，除了 .card-body 還可以有 .card-header .card-footer</p>
+        <div class="row">
+            <!-- 最外層 col 不要用 margin ，因為 col 寬高都計算好了，就算 margin:1px 也會破壞整個版面 -->
+            <!-- 外層 col 頂多用 padding， padding 算在 border-box 的 width 裡面，margin 不算在裡面，
+            要調整空間距離不要在 col 上做，最好在裡面在多包一層調整版型 -->
+            <div class="col-sm-4">
+                <div class="card">
+                    <img src="https://picsum.photos/400/300/?random=1" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img src="https://picsum.photos/400/300/?random=1" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img src="https://picsum.photos/400/300/?random=1" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>列表群組</h4>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img src="https://picsum.photos/400/300/?random=1" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 解決卡片內容物長度不同造成卡片高度不同的問題 -->
+    <!-- card-body 不是彈性盒，要用 d-flex 轉換成彈性盒 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 bg-dark">
+                <div class="card h-100">
+                    <img src="https://picsum.photos/400/300/?random=1" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.Some quick example text to build on the card title and make up the bulk
+                            of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. 增加背景顏色 測試父元素的高度 -->
+            <div class="col-sm-4 bg-dark">
+                <!-- 2. 先把卡片高度都拉到父元素高度的 100%-->
+                <div class="card h-100">
+                    <img src="https://picsum.photos/400/300/?random=1" class="card-img-top" alt="...">
+                    <!-- 3. 將 card-body 轉成 flex 並轉成 column 分配剩餘的空間 -->
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card title</h5>
+                        <!-- 4. 剩餘的空間都給 p 標籤，自然 a 標籤就會被推到底下對齊-->
+                        <p class="card-text flex-fill">Some quick example text to build on the card title and make up
+                            the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 bg-dark">
+                <div class="card h-100">
+                    <img src="https://picsum.photos/400/300/?random=1" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text mb-auto">Some quick example text to build on the card title and make up the
+                            bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>卡片導覽與組合</h4>
+        <div class="row">
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#a">Tab1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#b">Tab2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#c">Tab3</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <div id="a" class="tab-pane fade show active card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+
+                        <div id="b" class="tab-pane fade card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Necessitatibus, et.
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+
+                        <div id="c" class="tab-pane fade card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
+                                autem!
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>圖像覆蓋</h4>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <img src="https://picsum.photos/1920/1080/?random=1" class="card-img w-100 h-100"
+                        style="object-fit:cover">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text">Last updated 3 mins ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card bg-dark text-white h-100">
+                    <div class="card-body"
+                        style="background:url(https://picsum.photos/1920/1080/?random=2) no-repeat center center/cover">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text">Last updated 3 mins ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- card-columns 控制幾個欄位 -->
+        <div class="card-columns">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title that wraps to a new line</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+            <div class="card p-3">
+                <blockquote class="blockquote mb-0 card-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">
+                        <small class="text-muted">
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                        </small>
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card bg-primary text-white text-center p-3">
+                <blockquote class="blockquote mb-0">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                    <footer class="blockquote-footer text-white">
+                        <small>
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                        </small>
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+            </div>
+            <div class="card p-3 text-right">
+                <blockquote class="blockquote mb-0">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">
+                        <small class="text-muted">
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                        </small>
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is another card with title and supporting text below. This card has some
+                        additional content to make it slightly taller overall.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>column-count</h4>
+        <div class="content">
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum veritatis adipisci nemo cupiditate
+                temporibus itaque libero quos similique nobis magni, possimus molestiae dolore iste hic, quis tempore
+                est unde facilis!
+            </div>
+
+            <div>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam eligendi fuga distinctio, veritatis
+                itaque quae velit unde, amet debitis magni dicta nemo vitae, corrupti voluptas cupiditate exercitationem
+                cum assumenda autem?
+            </div>
+
+            <div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore ipsa quos et! Repudiandae illum quos at
+                porro delectus, fuga neque autem eius facilis dolore explicabo, inventore hic dignissimos veniam itaque!
+            </div>
+
+            <div>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem voluptas, aut non blanditiis sequi ipsam
+                numquam illum quisquam consequuntur itaque molestiae quaerat quod laborum odit dolorem, ad soluta.
+                Itaque, ratione.
+            </div>
+
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia optio cupiditate, reiciendis rerum soluta
+                nam officia aspernatur nemo et? At doloribus amet distinctio molestias illum quidem vel neque obcaecati
+                saepe!
+            </div>
+
+            <div>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit optio saepe ipsam quidem possimus
+                maxime placeat quasi reiciendis recusandae, aspernatur expedita eum, voluptatum quia? Nam suscipit ex
+                officiis mollitia ea.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
